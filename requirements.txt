@@ -1,0 +1,30 @@
+# ── Core data ─────────────────────────────────────────────────────────────────
+pandas==2.2.2               # DataFrames and time-series manipulation throughout
+numpy==1.26.4               # Numerical operations inside indicator calculations
+fredapi==0.5.1              # Official FRED API wrapper (data_fetcher.py)
+yfinance==0.2.40            # Yahoo Finance price / fundamental fetches
+requests==2.31.0            # HTTP for Shiller XLS and AAII downloads
+openpyxl==3.1.2             # Reads Shiller .xls workbook (pandas engine)
+xlrd==2.0.1                 # Fallback XLS reader for older Shiller format
+
+# ── Caching / IO ───────────────────────────────────────────────────────────────
+pyarrow==16.0.0             # Parquet cache serialization (faster than CSV)
+
+# ── Environment ────────────────────────────────────────────────────────────────
+python-dotenv==1.0.1        # Load FRED_API_KEY from .env file
+
+# ── Scoring / ML ──────────────────────────────────────────────────────────────
+scikit-learn==1.4.2         # Percentile ranking, preprocessing utilities
+xgboost==2.0.3              # ML model (Prompt 4)
+shap==0.45.0                # Model explainability (Prompt 4)
+hmmlearn==0.3.0             # 3-state HMM for macro regime detection (ml_model.py)
+imbalanced-learn==0.12.0    # SMOTE oversampling within training folds (ml_model.py)
+joblib==1.4.2               # Model serialization (.joblib files in .cache/models/)
+
+# ── Scheduler & Alerts ────────────────────────────────────────────────────────
+schedule==1.2.1             # Background data refresh jobs (scheduler.py)
+plyer==2.1.0                # Desktop notifications on Mac and Windows
+
+# ── Visualisation (Prompt 5) ──────────────────────────────────────────────────
+streamlit==1.33.0           # Dashboard UI
+plotly==5.22.0              # Interactive charts inside Streamlit
